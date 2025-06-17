@@ -7,10 +7,10 @@ for dirpath, dirnames, filenames in os.walk("src"):
         filepath = os.path.join(dirpath, filename)
         with open(filepath, "r") as f:
             for line in f:
-                if (line[0]=="#" and len(line)>80):
+                if (line[0]=="#" and len(line.rstrip())>80):
                     violations+=1
                     continue
-                if(len(line)>80):
+                if(len(line.rstrip())>80):
                     violations+=1
                 if ("print(" in line and line[0]!='#'):
                     if(line.find("print(")<line.find('#') or line.find('#')==-1):
