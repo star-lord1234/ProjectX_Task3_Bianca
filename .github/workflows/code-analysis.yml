@@ -1,8 +1,12 @@
 name: Static Code Analyser
 
-on: [push, pull_request]
-      branch:
-        - main
+on:
+  push:
+    branch:
+      - main
+  pull_request:
+    branch:
+      - main
 jobs:
   run-check:
     runs-on: ubuntu-latest
