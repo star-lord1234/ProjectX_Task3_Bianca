@@ -1,15 +1,21 @@
 name: Static Code Analyser
 
-on: [push, pull_request]
-      branch:
-        - main
+on:
+  push:
+    branch:
+      - main
+  pull_request:
+    branch:
+      - main
 jobs:
   run-check:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
       - name: Run analyse.py
         run: |
-          python src/analyse.py
+          python analyse.py
