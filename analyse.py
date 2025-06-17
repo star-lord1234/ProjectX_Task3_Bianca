@@ -30,7 +30,7 @@ for dirpath, dirnames, filenames in os.walk("src"):
                 if(line==""):
                     continue
         if(violations>=5 or forbiddenk>0):
-            print(filepath+f": HIGH RISK")
+            print(filepath+": HIGH RISK")
         elif(violations<5 and violations!=0 ):
             print(filepath+": LOW RISK")
         elif(violations+forbiddenk==0):
